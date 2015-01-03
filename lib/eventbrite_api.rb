@@ -5,11 +5,24 @@ require "eventbrite_api/response"
 require "eventbrite_api/request"
 
 class EventbriteAPI
+	attr_accessor :access_token
+
+  def initialize( auth_token )
+  	@access_token = auth_token
+  end
 
   def method_missing(method, *args)
     params = args[0].is_a?(Hash) ? args[0] : {}
-    raise MissingIdException.new("#{method.capitalize} id can not be empty.") unless params[:id]
-    path = "/#{method}/#{params.delete(:id)}?token=#{Configuration.access_token}"
+    new_resource = params[:new] ? true : false
+    path = ""
+    if new_resource
+    	path = "/#{method}?token=#{@access_token}"
+    	params.delete(:id) unless not params[:id]
+    else
+    	raise MissingIdException.new("#{method.capitalize} id can not be empty.") unless params[:id]
+    	path = "/#{method}/#{params.delete(:id)}?token=#{@access_token}"
+    end
+    params.delete(:new) unless not params[:new]
     Request.new(path, params)
   end
 
