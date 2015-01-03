@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name = "eventbrite_api"
   s.authors = ["Xin Fan (Fred)"]
-  s.version = "0.0.2"
+  s.version = "0.0.3"
   s.email = "fredxinfan@gmail.com"
   s.summary = "A simple API wrapper for Eventbrite V3."
   s.files = [
@@ -13,6 +13,6 @@ Gem::Specification.new do |s|
               "lib/eventbrite_api/response.rb"
             ]
   
-  s.add_dependency("httparty",[">= 0"])
-  s.add_dependency("json",[">= 0"])
+  s.add_dependency("httparty",["~> 0.13"])
+  s.add_dependency("json",["~> 1.8"])
 end
