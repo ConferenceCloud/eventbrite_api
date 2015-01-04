@@ -13,16 +13,13 @@ class EventbriteAPI
 
   def method_missing(method, *args)
     params = args[0].is_a?(Hash) ? args[0] : {}
-    new_resource = params[:new] ? true : false
     path = ""
-    if new_resource
-    	path = "/#{method}?token=#{@access_token}"
-    	params.delete(:id) unless not params[:id]
+    if not params[:id]
+    	path = "/#{method}/?token=#{@access_token}"
     else
-    	raise MissingIdException.new("#{method.capitalize} id can not be empty.") unless params[:id]
+    	# raise MissingIdException.new("#{method.capitalize} id can not be empty.") unless params[:id]
     	path = "/#{method}/#{params.delete(:id)}?token=#{@access_token}"
     end
-    params.delete(:new) unless not params[:new]
     Request.new(path, params)
   end
 
