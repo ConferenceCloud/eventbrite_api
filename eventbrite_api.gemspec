@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.email = "fredxinfan@gmail.com"
   s.summary = "A simple API wrapper for Eventbrite V3."
   s.files = [
-              "ReadMe.md",
+              "README.md",
               "eventbrite_api.gemspec", 
               "lib/eventbrite_api.rb", 
               "lib/eventbrite_api/configuration.rb", 
