@@ -1,7 +1,5 @@
 [![Gem Version](https://badge.fury.io/rb/rubybrite.svg)](http://badge.fury.io/rb/rubybrite)
 
-====
-
 This gem is for Eventbrite V3 API only.
 
 # Get Started
