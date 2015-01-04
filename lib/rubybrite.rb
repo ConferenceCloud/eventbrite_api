@@ -1,8 +1,8 @@
 require "httparty"
 require "json"
-require "eventbrite_api/configuration"
-require "eventbrite_api/response"
-require "eventbrite_api/request"
+require "rubybrite/configuration"
+require "rubybrite/response"
+require "rubybrite/request"
 
 class EventbriteAPI
 	attr_accessor :access_token
