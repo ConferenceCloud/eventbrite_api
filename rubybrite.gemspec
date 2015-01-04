@@ -1,7 +1,7 @@
 Gem::Specification.new do |s|
   s.name      = "rubybrite"
   s.authors   = ["John-Alan Simmons", "Xin Fan (Fred)"]
-  s.version   = "0.0.3"
+  s.version   = "0.0.4"
   s.licenses  = ['MIT']
   s.email     = ["simmons.johnalan@gmail.com", "fredxinfan@gmail.com"]
   s.summary   = "A simple API wrapper for Eventbrite V3."
